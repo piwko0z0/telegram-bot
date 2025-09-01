@@ -1,7 +1,8 @@
 import telebot
 
 # Вставь сюда токен от BotFather
-TOKEN = "8134465834:AAE9z5Lv077FIEbBldteOIBJ_VwTNwSJ8ag"
+import os
+TOKEN = os.getenv("8134465834:AAE9z5Lv077FIEbBldteOIBJ_VwTNwSJ8ag")
 bot = telebot.TeleBot(TOKEN)
 
 RUB_PER_TON = 290  # цена тона в рублях
@@ -26,3 +27,4 @@ def convert(message):
         bot.reply_to(message, "Напиши число (например: 2.5)")
 
 bot.polling(none_stop=True)
+
